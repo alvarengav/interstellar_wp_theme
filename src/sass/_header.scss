@@ -1,0 +1,85 @@
+.blog-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    .navbar {
+
+        &-brand {
+            img {
+                display: block;
+                max-width: 100px;
+            }
+        }
+
+        &-toggler {
+            border: none;
+            outline: 0;
+        }
+
+        &-nav {
+            .nav-item {
+                .nav-link {
+                    margin: 0;
+
+                    padding: null {
+                        top: 1rem;
+                        bottom: 1rem;
+                        left: 1rem;
+                        right: 1rem;
+                    }
+
+                    ;
+
+                    &:not(.disabled) {
+                        color: white;
+                    }
+
+                    transition: all 200ms;
+
+                    &:hover {
+                        background-color: theme-color('dark3');
+                        // transform: scale(1.2) translateY(-4px);
+                    }
+                }
+
+                &.active {
+                    .nav-link {
+                        color: theme-color('orange');
+                        background-color: theme-color('dark3');
+                    }
+                }
+            }
+
+            &.external-brands {
+
+                #github-brand {
+                    .nav-link {
+                        svg {
+                            max-width: 40px;
+                            height: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .navbar {
+            padding: null {
+                top: 0;
+                bottom: 0;
+            }
+
+            ;
+
+            &-brand {
+                img {
+                    max-width: 140px;
+                }
+            }
+        }
+    }
+}

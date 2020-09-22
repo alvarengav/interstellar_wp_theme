@@ -1,0 +1,41 @@
+@import './variables';
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+
+footer.interstellar-footer{
+    padding-top: 1.5rem;
+    background-color: theme-color('dark2');
+    
+    .footer{
+        &-title{
+            display: inline;
+            vertical-align: middle;
+
+            &::before{
+                display: inline-block;
+                content: ' ';
+                width: 2rem;
+                height: 2px;
+                margin-right: .5rem;
+                background-color: theme-color('orange');
+            }
+        }
+
+        &-text{
+            margin: auto;
+            max-width: 450px;
+        }
+    }
+
+    .nav__brands{
+        .nav-item{
+            .nav-link{
+                font-size: 1.5rem;
+                color: white;
+            }
+        }
+    }
+}

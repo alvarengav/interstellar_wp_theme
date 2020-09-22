@@ -1,0 +1,25 @@
+.posts .post {
+  border-bottom: 1px solid #7e7e7e;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.posts .post a {
+  color: #e16428;
+}
+.posts .post__title a {
+  color: white;
+}
+@media (min-width: 992px) {
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .posts .post {
+    padding: 0.5rem 1rem;
+    width: 33.3333333333%;
+    border-bottom: none;
+  }
+  .posts .post:nth-child(odd) {
+    background-color: #2e2d2d;
+  }
+}

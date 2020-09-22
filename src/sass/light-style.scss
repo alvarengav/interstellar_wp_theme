@@ -1,0 +1,30 @@
+@import "variables";
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/utilities";
+
+@import "header";
+@import "preloader";
+@import "_preloader_v2.css";
+
+body, html{
+  max-width: 100%;
+  color: white;
+  overflow-x: hidden;
+}
+
+
+
+#page.site{
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-top: 4rem;
+}

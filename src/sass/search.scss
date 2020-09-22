@@ -1,0 +1,39 @@
+@import './variables';
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+//
+.posts {//
+    .post {
+        border-bottom: 1px solid theme-color('dark4');
+        padding-bottom: .5rem;
+        //
+        margin-bottom: 1.5rem;
+        a {
+            color: theme-color('orange');
+        }
+
+        &__title {
+            a {
+                color: white;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        flex-wrap: wrap;
+
+        .post {
+            padding: .5rem 1rem;
+            width: +(100% / 3);
+            border-bottom: none;
+
+            &:nth-child(odd){
+                background-color: theme-color('dark3');
+            }
+        }
+    }
+}
