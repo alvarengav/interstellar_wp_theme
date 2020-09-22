@@ -52,7 +52,7 @@ if (!function_exists('interstellar_setup')) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__('Primary', 'interstellar'),
+				'header-menu' => esc_html__('Menu de cabecera', 'interstellar'),
 			)
 		);
 
@@ -159,19 +159,6 @@ function interstellar_scripts()
 	}
 }
 add_action('wp_enqueue_scripts', 'interstellar_scripts');
-
-/**
- * Registro de menus
- */
-function register_my_menus()
-{
-	register_nav_menus(
-		array(
-			'header-menu' => __('Header Menu'),
-		)
-	);
-}
-add_action('init', 'register_my_menus');
 
 //add class 'nav-item' to li for nav menu
 function special_nav_class($classes, $item, $args)
