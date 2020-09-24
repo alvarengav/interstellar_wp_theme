@@ -8,9 +8,8 @@
  */
 
 ?>
-<div>Article</div>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header mb-3">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -31,7 +30,7 @@
 
 	<?php interstellar_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="entry-content mt-3 px-5">
 		<?php
 		the_content(
 			sprintf(

@@ -106,7 +106,7 @@ if ( ! function_exists( 'interstellar_entry_footer' ) ) :
 				),
 				wp_kses_post( get_the_title() )
 			),
-			'<span class="edit-link">',
+			'<br><span class="edit-link"><i class="fas fa-edit"></i> ',
 			'</span>'
 		);
 	}
