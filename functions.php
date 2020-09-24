@@ -165,7 +165,7 @@ function special_nav_class($classes, $item, $args)
 {
 	if ($args->theme_location == 'header-menu') {
 		$classes[] = 'nav-item ';
-		if (in_array('current-menu-item', $classes)) {
+		if (in_array('current-menu-item', $classes) || in_array('current_page_parent', $classes)) {
 			$classes[] = 'active ';
 		}
 	}

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all single posts
  *
@@ -10,39 +11,46 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-		<h1>Mi Post</h1>
-		<?php
-		while ( have_posts() ) :
-			the_post();
+<main id="primary" class="site-main container-fluid">
+	<style>
+		.site-main img{
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
 
-			get_template_part( 'template-parts/content', get_post_type() );
-			echo "<h1 style='color:red'>" . get_post_type() . "</h1>";
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'interstellar' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'interstellar' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+	<div class="row">
+		<div class="col-lg-9">
+			<?php while (have_posts()) :
+				the_post();
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+				get_template_part('template-parts/content', get_post_type());
+				the_post_navigation(
+					array(
+						'prev_text' => '<span class="nav-subtitle">' . esc_html__('Anterior:', 'interstellar') . '</span> <span class="nav-title">%title</span>',
+						'next_text' => '<span class="nav-subtitle">' . esc_html__('Siguiente:', 'interstellar') . '</span> <span class="nav-title">%title</span>',
+					)
+				);
 
-			echo 'haga seguimiento a los comentarios con ' . post_comments_feed_link('Example', the_ID());
+				// If comments are open or we have at least one comment, load up the comment template.
+				if (comments_open() || get_comments_number()) :
+					comments_template();
+				endif;
+			?>
+				Puede <a href="#respond">dejar un comentario</a>, o
+				<a href="<?php trackback_url(); ?>">trackback</a>
+				desde su propio sitio.
 
-			echo '<p>' . $post->comment_status . $post->ping_status . '</p>';
-?>
-			Puede <a href="#respond">dejar un comentario</a>, o 
-			<a href="<?php trackback_url(); ?>">trackback</a> 
-		  desde su propio sitio.
+			<?php endwhile; // End of the loop.
+			?>
+		</div>
 
-		<?php endwhile; // End of the loop.
-		?>
+		<div class="col-lg-3">
+			<?php get_sidebar(); ?>
+		</div>
+	</div>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
