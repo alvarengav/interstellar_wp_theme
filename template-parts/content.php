@@ -30,7 +30,7 @@
 
 	<?php interstellar_post_thumbnail(); ?>
 
-	<div class="entry-content mt-3 px-5">
+	<div class="entry-content mt-3 px-lg-5">
 		<?php
 		the_content(
 			sprintf(
